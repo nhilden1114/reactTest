@@ -6,7 +6,14 @@ function Fact(props) {
   return (
     <div className="fact">
       <span>{props.text}</span>
+      <div className="dates">
+        <span>Created At: {props.createdAt}</span>
+        <span>Updated At: {props.updatedAt}</span>
+      </div>
+      
     </div>
+
+  
   );
 }
 
@@ -15,3 +22,9 @@ Fact.propTypes = {
 };
 
 export default Fact;
+
+
+
+//<div className="creation">
+//<span >Created At: {props.createdAt}</span>
+//</div>

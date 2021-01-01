@@ -1,11 +1,8 @@
-
 import React, { Component } from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import axios from "axios";
-
-import FactList from "./components/FactList";
-
+import CatFacts from "./components/CatFacts";
 
 class App extends Component {
 
@@ -19,16 +16,17 @@ class App extends Component {
       .get("https://cat-fact.herokuapp.com/facts")
       .then(response => {
 
-        // create an array of contacts only with relevant data
+        // create an array of facts pulling only the relevant text
         const newFacts = response.data.map(c => {
           return {
             id: c._id,
-            text: c.text
+            text: c.text,
+            createdAt: c.createdAt,
+            updatedAt: c.updatedAt
           };
         });
 
-        // create a new "State" object without mutating 
-        // the original State object. 
+        // create new "State" object without mutating the original State object. 
         const newState = Object.assign({}, this.state, {
           facts: newFacts
         });
@@ -44,10 +42,10 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">React Contact Manager</h1>
+          <h1 className="App-title">Cat Facts</h1>
         </header>
 
-        <FactList facts={this.state.facts} />
+        <CatFacts facts={this.state.facts} />
       </div>
     );
   }

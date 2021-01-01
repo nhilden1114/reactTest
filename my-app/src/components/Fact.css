@@ -1,12 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 .fact {
     margin: 10px;
     padding: 10px;
-    border: 1px solid #bbb;
-    background-color: #eee;
+    border: 1px solid rgb(90, 86, 86);
+    background-color: rgb(196, 193, 248);
+    font-family: 'Roboto', sans-serif;
   }
   
-  .fact span {
-    font-size: 1.2em;
-    text-decoration: none;
-    color: #333;
-  }
+.fact span {
+  font-size: 1.2em;
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  display: block;
+}
+
+.dates {
+  font-size: 0.7em !important;
+}
